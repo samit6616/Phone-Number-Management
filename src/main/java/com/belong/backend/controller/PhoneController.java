@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST controller for managing phone numbers.
+ * Provides endpoints to retrieve and activate phone numbers.
+ */
 @RestController
 @RequestMapping("/belong/phones")
 public class PhoneController {

@@ -4,8 +4,11 @@ import com.belong.backend.model.PhoneNumber;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
+/**
+ * This class implements methods of PhoneService interface.
+ * It also loads static data while initialization
+ */
 @Service
 public class PhoneServiceImpl implements PhoneService {
     private static final Map<Integer, List<PhoneNumber>> customerPhoneNumbers = new HashMap<>();
@@ -20,13 +23,13 @@ public class PhoneServiceImpl implements PhoneService {
                 new PhoneNumber("8907654321", true)
         ));
     }
-
+    
     @Override
     public List<PhoneNumber> getAllPhoneNumbers() {
         // Returns all phone numbers across all customers
         return customerPhoneNumbers.values().stream()
                 .flatMap(Collection::stream)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
